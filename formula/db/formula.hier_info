@@ -1,0 +1,21 @@
+|formula
+sum[0] => Div0.IN8
+sum[0] => Mod0.IN9
+sum[1] => Div0.IN7
+sum[1] => Mod0.IN8
+sum[2] => Div0.IN6
+sum[2] => Mod0.IN7
+sum[3] => Div0.IN5
+sum[3] => Mod0.IN6
+sum[4] => Div0.IN4
+sum[4] => Mod0.IN5
+UN[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+DC[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+

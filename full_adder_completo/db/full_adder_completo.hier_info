@@ -1,0 +1,266 @@
+|full_adder_completo
+A[0] => full_adder_4bits:A0.A[0]
+A[1] => full_adder_4bits:A0.A[1]
+A[2] => full_adder_4bits:A0.A[2]
+A[3] => full_adder_4bits:A0.A[3]
+B[0] => full_adder_4bits:A0.B[0]
+B[1] => full_adder_4bits:A0.B[1]
+B[2] => full_adder_4bits:A0.B[2]
+B[3] => full_adder_4bits:A0.B[3]
+Uni_Display[0] << decoBCD:A2.F[0]
+Uni_Display[1] << decoBCD:A2.F[1]
+Uni_Display[2] << decoBCD:A2.F[2]
+Uni_Display[3] << decoBCD:A2.F[3]
+Uni_Display[4] << decoBCD:A2.F[4]
+Uni_Display[5] << decoBCD:A2.F[5]
+Uni_Display[6] << decoBCD:A2.F[6]
+Dec_Display[0] << decoBCD:A3.F[0]
+Dec_Display[1] << decoBCD:A3.F[1]
+Dec_Display[2] << decoBCD:A3.F[2]
+Dec_Display[3] << decoBCD:A3.F[3]
+Dec_Display[4] << decoBCD:A3.F[4]
+Dec_Display[5] << decoBCD:A3.F[5]
+Dec_Display[6] << decoBCD:A3.F[6]
+
+
+|full_adder_completo|full_adder_4bits:A0
+A[0] => full_adder:A0.A
+A[1] => full_adder:A1.A
+A[2] => full_adder:A2.A
+A[3] => full_adder:A3.A
+B[0] => full_adder:A0.B
+B[1] => full_adder:A1.B
+B[2] => full_adder:A2.B
+B[3] => full_adder:A3.B
+Sum[0] <= full_adder:A0.Sum
+Sum[1] <= full_adder:A1.Sum
+Sum[2] <= full_adder:A2.Sum
+Sum[3] <= full_adder:A3.Sum
+Cout <= full_adder:A3.Cout
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A0
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A0|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A0|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A1
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A1|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A1|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A2
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A2|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A2|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A3
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A3|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|full_adder_4bits:A0|full_adder:A3|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|formula:A1
+sum[0] => Div0.IN8
+sum[0] => Mod0.IN9
+sum[1] => Div0.IN7
+sum[1] => Mod0.IN8
+sum[2] => Div0.IN6
+sum[2] => Mod0.IN7
+sum[3] => Div0.IN5
+sum[3] => Mod0.IN6
+sum[4] => Div0.IN4
+sum[4] => Mod0.IN5
+UN[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+UN[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+DC[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+DC[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|decoBCD:A2
+IA[0] => Equal0.IN3
+IA[0] => Equal1.IN2
+IA[0] => Equal2.IN3
+IA[0] => Equal3.IN1
+IA[0] => Equal4.IN3
+IA[0] => Equal5.IN2
+IA[0] => Equal6.IN3
+IA[0] => Equal7.IN2
+IA[0] => Equal8.IN3
+IA[0] => Equal9.IN3
+IA[1] => Equal0.IN1
+IA[1] => Equal1.IN1
+IA[1] => Equal2.IN2
+IA[1] => Equal3.IN3
+IA[1] => Equal4.IN1
+IA[1] => Equal5.IN1
+IA[1] => Equal6.IN2
+IA[1] => Equal7.IN3
+IA[1] => Equal8.IN2
+IA[1] => Equal9.IN2
+IA[2] => Equal0.IN0
+IA[2] => Equal1.IN0
+IA[2] => Equal2.IN1
+IA[2] => Equal3.IN2
+IA[2] => Equal4.IN2
+IA[2] => Equal5.IN3
+IA[2] => Equal6.IN1
+IA[2] => Equal7.IN1
+IA[2] => Equal8.IN1
+IA[2] => Equal9.IN1
+IA[3] => Equal0.IN2
+IA[3] => Equal1.IN3
+IA[3] => Equal2.IN0
+IA[3] => Equal3.IN0
+IA[3] => Equal4.IN0
+IA[3] => Equal5.IN0
+IA[3] => Equal6.IN0
+IA[3] => Equal7.IN0
+IA[3] => Equal8.IN0
+IA[3] => Equal9.IN0
+F[0] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[1] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[2] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[3] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[4] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[5] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[6] <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_adder_completo|decoBCD:A3
+IA[0] => Equal0.IN3
+IA[0] => Equal1.IN2
+IA[0] => Equal2.IN3
+IA[0] => Equal3.IN1
+IA[0] => Equal4.IN3
+IA[0] => Equal5.IN2
+IA[0] => Equal6.IN3
+IA[0] => Equal7.IN2
+IA[0] => Equal8.IN3
+IA[0] => Equal9.IN3
+IA[1] => Equal0.IN1
+IA[1] => Equal1.IN1
+IA[1] => Equal2.IN2
+IA[1] => Equal3.IN3
+IA[1] => Equal4.IN1
+IA[1] => Equal5.IN1
+IA[1] => Equal6.IN2
+IA[1] => Equal7.IN3
+IA[1] => Equal8.IN2
+IA[1] => Equal9.IN2
+IA[2] => Equal0.IN0
+IA[2] => Equal1.IN0
+IA[2] => Equal2.IN1
+IA[2] => Equal3.IN2
+IA[2] => Equal4.IN2
+IA[2] => Equal5.IN3
+IA[2] => Equal6.IN1
+IA[2] => Equal7.IN1
+IA[2] => Equal8.IN1
+IA[2] => Equal9.IN1
+IA[3] => Equal0.IN2
+IA[3] => Equal1.IN3
+IA[3] => Equal2.IN0
+IA[3] => Equal3.IN0
+IA[3] => Equal4.IN0
+IA[3] => Equal5.IN0
+IA[3] => Equal6.IN0
+IA[3] => Equal7.IN0
+IA[3] => Equal8.IN0
+IA[3] => Equal9.IN0
+F[0] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[1] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[2] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[3] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[4] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[5] <= F.DB_MAX_OUTPUT_PORT_TYPE
+F[6] <= F.DB_MAX_OUTPUT_PORT_TYPE
+
+
